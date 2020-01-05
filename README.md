@@ -15,10 +15,24 @@
   <a href="#-licença">Licença</a>
 </p>
 
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/bernardoamim/gympoint?color=%2304D361" />
+
+  <a href="https://github.com/bernardoamim">
+    <img alt="Made by Bernardo Amim" src="https://img.shields.io/badge/madeby-Bernardo-blueviolet" />
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361" />
+
+  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-10/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-10?style=social" />
+  </a>
+</p>
+
 <br>
 
 <p align="center">
-  <img alt="Frontend" src=".github/screens.png" width="100%">
+  <img alt="Telas" src=".github/screens.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
