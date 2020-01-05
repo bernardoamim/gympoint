@@ -3,15 +3,15 @@
 </h1>
 
 <h3 align="center">
-  Backend, Frontend e Mobile do Gympoint App
+  Backend, Frontend e Mobile (iOS).
 </h3>
 
 <blockquote align="center">“Pequenas ações, se acompanhadas de disciplina e constância, revolucionam!”!</blockquote>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-instalação-e-execução">Instalação e execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-descrição-do-projeto">Descrição do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">Licença</a>
 </p>
 
@@ -37,8 +37,9 @@
 
 ## 🚀 Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Esse projeto foi desenvolvido utilizando as tecnologias [NodeJS](https://nodejs.org/en/), [ReactJS](https://reactjs.org) e [React Native](https://facebook.github.io/react-native/)
 
+<br>
 <p align="center">
   <a href="https://nodejs.org/en/"><img alt="Nodejs" src=".github/node-logo.svg" width="10%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://reactjs.org"><img alt="React" src=".github/react-logo.svg" width="10%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,41 +48,52 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Descrição do Projeto
 
-Gympoint é um software para controle e gestão de academias e está dividido em três partes. O backend está estruturado em NodeJS e é responsável por disponibilizar uma API para que o frontend e o mobile possam consumí-la e exibir as informações para o usuário.
+### Esse projeto foi o desafio final do Bootcamp 9 da RocketSeat para obtenção do certificado
+
+Gympoint é um software para controle e gestão de academias e está dividido em três partes. O backend está estruturado em NodeJS e é responsável por disponibilizar uma API para que o frontend e o mobile possam consumr e exibir as informações para o usuário.
 
 A parte WEB foi construída com as tecnologias ReactJs + Redux. Nela, os administradores da academia podem fazer a gestão de alunos, planos, matrículas e pedidos de ajuda.
 
 Já o aplicativo mobile foi desenvolvido em React Native e tem a função de dar ao aluno a possibilidade de fazer Checkins na academia, enviar pedidos de ajuda e acompanhar as respostas de cada um.
 
+### OBS: O APLICATIVO MOBILE FOI CONSTRUÍDO PARA iOS!!! NÃO GARANTIMOS O FUNCIONAMENTO EM AMBIENTE ANDROID!!!
+
 ## 📥 Instalação
 
 Primeiramente, clone esse repositório em uma pasta.
 
-### Backend
-
-1. A partir da raiz do projeto, entre na pasta rodando `cd backend`;
-2. Inicie os bancos de dados postgresql, mongodb e redis utilizando docker, e crie o banco `gympoint` no postgres:
-
 ```bash
-  $ docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11
-  $ docker run --name mongo -p 27017:27017 -d -t mongo
-  $ docker run --name redis -p 6379:6379 -d -t redis:alpine
-  $
-  $ docker exec -it postgres /bin/sh
-  # su postgres
-  /$ psql
-  postgres=# CREATE DATABASE gympoint;
-  postgres=# exit
-  /$ exit
-  # exit
+  $ git clone https://github.com/bernardoamim/gympoint.git
 ```
 
-3. Crie um arquivo `.env` a partir do arquivo `.env.example` preenchendo todas as variáveis pedidas;
-4. Rode `npm install` para instalar todas as dependências;
-5. Rode `npx sequelize db:migrate` para criar as migrations;
-6. Rode `npx sequelize db:seed:all` para popular o banco;
-7. Rode `npm run queue` para iniciar o consumo das filas;
-8. Rode `npm run build && npm run start` em um novo terminal para compilar e iniciar o servidor node;
+### Backend
+
+1. A partir da raiz do projeto, entre na pasta `./backend` rodando `cd backend`;
+2. Para rodar a aplicação na sua máquina você vai precisar de inicializar as imagens dos bancos de dados [PostgreSQL](https://www.postgresql.org/) e [Redis](https://redis.io/) utilizando [Docker](https://www.docker.com/) e criar o banco `gympoint` no PostgreSQL. Para isso, sugerimos instalar a ferramenta [Postbird GUI](https://electronjs.org/apps/postbird) para manipulação do banco de dados. 
+3. Instale o Docker na sua máquina, inicialize-o e rode os seguintes comandos:
+
+```bash
+  $ docker run --name postgresdb -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres:11
+  $ docker run --name redisgym -p 6379:6379 -d -t redis:alpine
+```
+
+4. Feito isso, você já deve ser capaz de vizualizar as imagens disponíveis executando `docker ps -a` e as imagens que estão ativas com `docker ps`.
+5. Incialize as imagens criadas com:
+
+```
+  docker start postgresdb
+  docker start redisgym
+```
+
+6. Em seguida, vá até o Postbird e conecte-se ao banco criado com as devidas credenciais.
+7. Crie um arquivo `.env` a partir do arquivo `.env.example` preenchendo todas as variáveis pedidas.
+
+8. Execute os seguintes comandos no seu terminal:
+9. `yarn` para instalar todas as dependências.
+10. `yarn sequelize db:migrate` para criar as migrations.
+11. `npx sequelize db:seed:all` para popular o banco.
+12. `yarn dev` para iniciar o servidor node.
+13. Em outra aba do termal, execute `yarn queue` para inicializar as filas em background.
 
 ### Frontend
 
