@@ -39,21 +39,23 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org)
-- [React Native](https://facebook.github.io/react-native/)
+<p align="center">
+  <a href="https://nodejs.org/en/"><img alt="Nodejs" src=".github/node-logo.svg" width="10%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://reactjs.org"><img alt="React" src=".github/react-logo.svg" width="10%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://facebook.github.io/react-native/"><img alt="React Native" src=".github/react-native-logo.svg" width="10%"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 
-## 💻 Projeto
+## 💻 Descrição do Projeto
 
-A aplicação desenvolvida neste projeto é um app gerenciador de academia, o Gympoint. Esse app tem seu backend construído em node que fornece uma api paaa ser consumida pelo aplicações web e mobile.
+Gympoint é um software para controle e gestão de academias e está dividido em três partes. O backend está estruturado em NodeJS e é responsável por disponibilizar uma API para que o frontend e o mobile possam consumí-la e exibir as informações para o usuário.
 
-A aplicação Web por sua vez é voltada para a gerência academia, onde funcionalidades, como: CRUDs de alunos, matrículas e planos foram implementados, além tela de ajuda aos alunos.
+A parte WEB foi construída com as tecnologias ReactJs + Redux. Nela, os administradores da academia podem fazer a gestão de alunos, planos, matrículas e pedidos de ajuda.
 
-Já aplicação mobile é direcionada aos alunos da academia, onde os mesmo poderão realizar check-ins, efetuar, listar e visualizar seus pedidos de ajuda com suas respectivas respostas.
+Já o aplicativo mobile foi desenvolvido em React Native e tem a função de dar ao aluno a possibilidade de fazer Checkins na academia, enviar pedidos de ajuda e acompanhar as respostas de cada um.
 
-## 📥 Instalação e execução
+## 📥 Instalação
 
-Faça um clone desse repositório
+Primeiramente, clone esse repositório em uma pasta.
 
 ### Backend
 
