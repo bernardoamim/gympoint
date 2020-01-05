@@ -123,8 +123,6 @@ Primeiramente, clone esse repositório em uma pasta.
 6. `pod install` para atualizar os pacotes
 7. `cd ..` para voltar para a pasta `./mobile`
 7. `npx react-native run-ios` para iniciar o servidor de desenvolvimento;
-4. Cheque o ip do servidor e substitua `localhost` do atributo `baseURL` no arquivo `src > services > api.js`;
-5. Rode `npm run android` para iniciar a instalação no smartphone;
 
 <i>Obs.:</i> Projeto mobile desenvolvido apenas para a plataforma <strong>iOS</strong>.
 
