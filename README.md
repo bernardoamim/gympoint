@@ -23,10 +23,7 @@
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361" />
-
-  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-10/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-10?style=social" />
-  </a>
+  
 </p>
 
 <br>
@@ -56,7 +53,7 @@ A parte WEB foi construída com as tecnologias ReactJs + Redux. Nela, os adminis
 
 Já o aplicativo mobile foi desenvolvido em React Native e tem a função de dar ao aluno a possibilidade de fazer Checkins na academia, enviar pedidos de ajuda e acompanhar as respostas de cada um.
 
-### OBS: O APLICATIVO MOBILE FOI CONSTRUÍDO PARA iOS!!! NÃO GARANTIMOS O FUNCIONAMENTO EM AMBIENTE ANDROID!!!
+### OBS: o aplicativo mobile foi desenvolvido para iOS!!! Não garantimos o funcionamento em ambiente Andorid!!!
 
 ## 📥 Instalação
 
@@ -68,7 +65,7 @@ Primeiramente, clone esse repositório em uma pasta.
 
 ### Backend
 
-1. A partir da raiz do projeto, entre na pasta `./backend` rodando `cd backend`;
+1. A partir da raiz do projeto, entre na pasta `./backend` executando `cd backend`;
 2. Para rodar a aplicação na sua máquina você vai precisar de inicializar as imagens dos bancos de dados [PostgreSQL](https://www.postgresql.org/) e [Redis](https://redis.io/) utilizando [Docker](https://www.docker.com/) e criar o banco `gympoint` no PostgreSQL. Para isso, sugerimos instalar a ferramenta [Postbird GUI](https://electronjs.org/apps/postbird) para manipulação do banco de dados. 
 3. Instale o Docker na sua máquina, inicialize-o e rode os seguintes comandos:
 
@@ -92,25 +89,44 @@ Primeiramente, clone esse repositório em uma pasta.
 9. `yarn` para instalar todas as dependências.
 10. `yarn sequelize db:migrate` para criar as migrations.
 11. `npx sequelize db:seed:all` para popular o banco.
-12. `yarn dev` para iniciar o servidor node.
+12. `yarn dev` para iniciar o servidor node na rota `http://localhost:3333`.
 13. Em outra aba do termal, execute `yarn queue` para inicializar as filas em background.
 
 ### Frontend
 
-1. A partir da raiz do projeto, entre na pasta rodando `cd frontend`;
-2. Rode `npm install` para instalar as dependências;
-3. Rode `npm run start` para iniciar o servidor de desenvolvimento;
-4. Abra `http://localhost:3000` para ver o projeto no navegador.
+1. A partir da raiz do projeto, entre na pasta `./frontend` executando `cd frontend`;
+2. Uma vez conectado ao banco e com o backend em execução, digite os seguintes comandos no seu terminal:
+3. `yarn` para instalar as dependências;
+4. `yarn start` para iniciar o servidor de desenvolvimento;
+5. Uma janela do seu navegador abrirá com a aplicação. Caso contrário, digite `http://localhost:3000` no navegador.
 
 ### Mobile
 
-1. A partir da raiz do projeto, entre na pasta rodando `cd mobile`;
-2. Rode `npm install` para instalar as dependências;
-3. Rode `npm run start` para iniciar o servidor de desenvolvimento;
+#### O aplicativo mobile foi desenvolvido para iOS com as seguintes especificações:
+
+- NPM: `6.9.0`
+- Xcode: `11.3`
+- MacOS: `Catalina 10.15.2`
+- Node: `v11.11.0`
+- Yarn: `1.13.0`
+- Docker: `19.03.5`
+- ReactJS: `16.12.0`
+- React Native: `0.61.5`, react na versão `16.9.0` no mobile
+
+### Você deve estar em um ambiente macOS para poder executar corretamente o aplicativo
+
+1. A partir da raiz do projeto, entre na pasta `./mobile` executando `cd mobile`;
+2. Digite os seguintes comandos no seu terminal:
+3. `sudo gem install cocoapods` para instalar o gerenciador de pacotes [Cocoapods](https://cocoapods.org)
+4. `yarn` para instalar as dependências
+5. Entre na pasta `ios` com `cd ios`
+6. `pod install` para atualizar os pacotes
+7. `cd ..` para voltar para a pasta `./mobile`
+7. `npx react-native run-ios` para iniciar o servidor de desenvolvimento;
 4. Cheque o ip do servidor e substitua `localhost` do atributo `baseURL` no arquivo `src > services > api.js`;
 5. Rode `npm run android` para iniciar a instalação no smartphone;
 
-<i>Obs.:</i> Projeto mobile desenvolvido apenas para a plataforma <strong>android</strong>.
+<i>Obs.:</i> Projeto mobile desenvolvido apenas para a plataforma <strong>iOS</strong>.
 
 ## 📝 Licença
 
