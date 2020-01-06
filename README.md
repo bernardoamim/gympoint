@@ -92,7 +92,7 @@ Primeiramente, clone esse repositório em uma pasta.
 12. `yarn dev` para iniciar o servidor node na rota `http://localhost:3333`.
 13. Em outra aba do termal, execute `yarn queue` para inicializar as filas em background.
 
-<strong>O arquivo exportado do Insomnia com as rotas e requisições configuradas pode ser acessado em:</strong>
+<strong>O arquivo exportado do Insomnia com as rotas e requisições configuradas pode ser acessado em:</strong> [insomnia-config.json](https://github.com/bernardoamim/gympoint/blob/master/.github/GympointInsomnia-BernardoAmim.json)
 
 ### Frontend
 
